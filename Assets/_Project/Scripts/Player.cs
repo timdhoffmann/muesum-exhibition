@@ -13,29 +13,9 @@ public class Player : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    void OnCollisionEnter(Collision collision)
-    {
-
-        Debug.Log("Entered: " + collision.gameObject.name + " tag: " + collision.gameObject.tag);
-        
-        if (collision.gameObject.tag == ("Room"))
-        {
-            collision.gameObject.GetComponent<Room>().ActivateRoom();
-        }
-
-    }
-
     bool IsGrounded()
     {
         return Physics.Raycast(transform.position, -Vector3.up, 1f);
-    }
-
-    void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.tag == "Room")
-        {
-            collision.gameObject.GetComponent<Room>().DeactivateRoom();
-        }
     }
 
     void Update()
@@ -49,7 +29,6 @@ public class Player : MonoBehaviour
         transform.Translate(straffe, 0, translation);
 
         Debug.DrawRay(transform.position, -transform.up * 1.1f, Color.black);
-        Debug.Log(IsGrounded());
 
         if (Input.GetKey(KeyCode.Space) && IsGrounded())
         {

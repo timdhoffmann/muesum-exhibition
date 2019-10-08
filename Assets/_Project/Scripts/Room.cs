@@ -10,7 +10,7 @@ public class Room : MonoBehaviour
 
     void Start()
     {
-
+ 
     }
 
     void Update()
@@ -18,16 +18,30 @@ public class Room : MonoBehaviour
         
     }
 
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            ActivateRoom();
+        }
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            DeactivateRoom();
+        }
+    }
+
     public void ActivateRoom()
     {
-        Debug.Log("Activating lights");
         for (int i = 0; i < lights.Length; i++)
         {
             lights[i].range = lightsRange;
         }
 
-
-        Debug.Log("Changing sounds");
+        
     }
 
     public void DeactivateRoom() {
