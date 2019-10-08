@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
         
         if (collision.gameObject.tag == ("Room"))
         {
-            collision.gameObject.GetComponent<MeshRenderer>().materials[0].color = Color.blue;
+            collision.gameObject.GetComponent<Room>().ActivateRoom();
         }
 
     }
@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.tag == "Room")
         {
-            collision.gameObject.GetComponent<MeshRenderer>().materials[0].color = Color.white;
+            collision.gameObject.GetComponent<Room>().DeactivateRoom();
         }
     }
 
