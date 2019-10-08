@@ -7,7 +7,6 @@ public class Player : MonoBehaviour
     public float speed = 10.0F;
     public bool lockCursor = false;
     public bool isJumping = false;
-    public bool isGrounded = false;
 
     void Start()
     {
@@ -17,20 +16,25 @@ public class Player : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
 
-        Debug.Log("Entered something " + collision.gameObject.tag);
-        if (collision.gameObject.name == "Room")
+        Debug.Log("Entered: " + collision.gameObject.name + " tag: " + collision.gameObject.tag);
+        
+        if (collision.gameObject.tag == ("Room"))
         {
-            collision.gameObject.GetComponent<MeshRenderer>().material.color = Color.blue;
-            isGrounded = true;
+            collision.gameObject.GetComponent<MeshRenderer>().materials[0].color = Color.blue;
         }
+
+    }
+
+    bool IsGrounded()
+    {
+        return Physics.Raycast(transform.position, -Vector3.up, 1f);
     }
 
     void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.name == "Room")
+        if (collision.gameObject.tag == "Room")
         {
-            collision.gameObject.GetComponent<MeshRenderer>().material.color = Color.white;
-            isGrounded = false;
+            collision.gameObject.GetComponent<MeshRenderer>().materials[0].color = Color.white;
         }
     }
 
@@ -44,7 +48,10 @@ public class Player : MonoBehaviour
 
         transform.Translate(straffe, 0, translation);
 
-        if (Input.GetKey(KeyCode.Space) && isGrounded)
+        Debug.DrawRay(transform.position, -transform.up * 1.1f, Color.black);
+        Debug.Log(IsGrounded());
+
+        if (Input.GetKey(KeyCode.Space) && IsGrounded())
         {
             GetComponent<Rigidbody>().AddForce(Vector3.up * 150);
         }
@@ -54,13 +61,11 @@ public class Player : MonoBehaviour
             lockCursor = !lockCursor;
             if (lockCursor)
             {
-                Debug.Log("NO_LOCK");
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = true;
             }
             else
             {
-                Debug.Log("LOCK");
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
             }
