@@ -14,19 +14,22 @@ public class Player : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.name == "Room")
+
+        Debug.Log("Entered something " + collision.gameObject.tag);
+        if (collision.gameObject.name == "Room")
         {
-            Debug.Log("Entered room");
+            collision.gameObject.GetComponent<MeshRenderer>().material.color = Color.blue;
             isGrounded = true;
         }
     }
 
-    private void OnCollisionExit(Collision collision)
+    void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.name == "Room")
         {
+            collision.gameObject.GetComponent<MeshRenderer>().material.color = Color.white;
             isGrounded = false;
         }
     }
