@@ -29,6 +29,12 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        Move();
+        DisplayCursor();
+    }
+
+    void Move()
+    {
         float translation = Input.GetAxis("Vertical") * speed;
         float straffe = Input.GetAxis("Horizontal") * speed;
 
@@ -52,7 +58,10 @@ public class Player : MonoBehaviour
         {
             rigidBody.velocity += Vector3.up * Physics.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
         }
+    }
 
+    void DisplayCursor()
+    {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             lockCursor = !lockCursor;
@@ -68,6 +77,4 @@ public class Player : MonoBehaviour
             }
         }
     }
-
-
 }
