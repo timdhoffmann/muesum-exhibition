@@ -8,6 +8,8 @@ public class Room : MonoBehaviour
 
     public float lightsRange;
 
+    private bool activating = false;
+
     void Start()
     {
  
@@ -15,7 +17,19 @@ public class Room : MonoBehaviour
 
     void Update()
     {
-        
+        if (activating)
+        {
+            for (int i = 0; i < lights.Length; i++)
+            {
+                lights[i].range = Mathf.Lerp(lights[i].range, lightsRange, Time.deltaTime);
+            }
+        } else
+        {
+            for (int i = 0; i < lights.Length; i++)
+            {
+                lights[i].range = Mathf.Lerp(lights[i].range, 0, Time.deltaTime); ;
+            }
+        }
     }
 
     public void OnTriggerEnter(Collider other)
@@ -36,18 +50,11 @@ public class Room : MonoBehaviour
 
     public void ActivateRoom()
     {
-        for (int i = 0; i < lights.Length; i++)
-        {
-            lights[i].range = lightsRange;
-        }
-
-        
+        activating = true;        
     }
 
-    public void DeactivateRoom() {
-        for(int i = 0; i < lights.Length; i++)
-        {
-            lights[i].range = 0;
-        }
+    public void DeactivateRoom()
+    {
+        activating = false;
     }
 }
