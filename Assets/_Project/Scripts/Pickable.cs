@@ -5,12 +5,12 @@ using UnityEngine;
 public class Pickable : MonoBehaviour
 {
     public Transform destination;
-    Rigidbody _rb;
-    BoxCollider _collider;
-    Camera _camera;
+    private Rigidbody _rb;
+    private BoxCollider _collider;
+    private Camera _camera;
 
-    float _force = 0;
-    bool _isTaken = false;
+    private float _force = 0;
+    private bool _isTaken = false;
 
     [Range(0, 100)]
     public float forceIntensity = 10;
@@ -27,7 +27,7 @@ public class Pickable : MonoBehaviour
         if (_camera == null) Debug.LogError("NO CAMERA FOUND");
     }
 
-    void SetModeTake()
+    private void SetModeTake()
     {
         _collider.enabled = false;
         _rb.useGravity = false;
@@ -70,11 +70,11 @@ public class Pickable : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonUp(0)) SetModeRelease();
+        if (Input.GetMouseButtonUp(0) && _isTaken) SetModeRelease();
         if (Input.GetMouseButton(1)) AddForce();
     }
 
-    void AddForce()
+    private void AddForce()
     {
         if (!_isTaken) return;
 
@@ -84,7 +84,7 @@ public class Pickable : MonoBehaviour
         //print(_force);
     }
 
-    void ResetForce()
+    private void ResetForce()
     {
         _force = 0;
     }
