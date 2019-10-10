@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -48,6 +49,11 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && IsGrounded())
         {
             GetComponent<Rigidbody>().velocity = Vector3.up * jumpVelocity;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("Menu");
         }
 
         if (rigidBody.velocity.y < 0)
