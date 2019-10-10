@@ -384,5 +384,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 0}
   forceIntensity: 100
+  outline: {fileID: 2100000, guid: 311b769aff6f652429842f8aed166a4e, type: 2}
+  standart: {fileID: 0}
+  selected: 0
   _thrown: 0
   _maxForce: 5000
