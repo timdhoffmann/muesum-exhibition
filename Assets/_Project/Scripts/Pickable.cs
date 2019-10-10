@@ -15,6 +15,8 @@ public class Pickable : MonoBehaviour
     [Range(0, 100)]
     public float forceIntensity = 10;
 
+    public bool _thrown;
+
     private void Start()
     {
         _rb = GetComponent<Rigidbody>();
@@ -29,9 +31,11 @@ public class Pickable : MonoBehaviour
     {
         _collider.enabled = false;
         _rb.useGravity = false;
+        _rb.isKinematic = false;
         this.transform.position = destination.position;
         this.transform.parent = destination;
 
+        _thrown = false;
         _isTaken = true;
     }
 
@@ -40,6 +44,7 @@ public class Pickable : MonoBehaviour
         this.transform.parent = null;
         _collider.enabled = true;
         _rb.useGravity = true;
+        _rb.isKinematic = false;
 
         Vector3 lCameraDirection = _camera.transform.forward;
 
@@ -47,6 +52,15 @@ public class Pickable : MonoBehaviour
 
         _isTaken = false;
         ResetForce();
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (_thrown)
+        {
+            _rb.useGravity = false;
+            _rb.isKinematic = true;
+        }
     }
 
     private void OnMouseOver()
@@ -64,8 +78,10 @@ public class Pickable : MonoBehaviour
     {
         if (!_isTaken) return;
 
+        _thrown = true;
+
         _force += forceIntensity;
-        print(_force);
+        //print(_force);
     }
 
     void ResetForce()
