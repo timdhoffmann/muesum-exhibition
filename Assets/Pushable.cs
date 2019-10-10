@@ -15,6 +15,11 @@ public class Pushable : MonoBehaviour
     public Material outline;
     public Material standart;
 
+    private void Start()
+    {
+        standart = GetComponent<Renderer>().material;
+    }
+
     private void OnMouseDown()
     {
         fall = true;
@@ -47,6 +52,7 @@ public class Pushable : MonoBehaviour
         if (selected)
         {
             GetComponent<Renderer>().material = outline;
+            GetComponent<Renderer>().material.mainTexture = standart.mainTexture;
         }
         else
         {

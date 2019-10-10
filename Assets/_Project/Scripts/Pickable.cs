@@ -28,6 +28,8 @@ public class Pickable : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
         _collider = GetComponent<BoxCollider>();
 
+        standart = GetComponent<Renderer>().material;
+
         //System D method, can be improved
         _camera = FindObjectOfType<Camera>();
         if (_camera == null) Debug.LogError("NO CAMERA FOUND");
@@ -87,6 +89,7 @@ public class Pickable : MonoBehaviour
         if (selected)
         {
             GetComponent<Renderer>().material = outline;
+            GetComponent<Renderer>().material.mainTexture = standart.mainTexture;
         } else
         {
             GetComponent<Renderer>().material = standart;
