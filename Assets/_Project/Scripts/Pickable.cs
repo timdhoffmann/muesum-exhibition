@@ -5,17 +5,18 @@ using UnityEngine;
 public class Pickable : MonoBehaviour
 {
     public Transform destination;
+    [Range(0, 100)]
+    public float forceIntensity = 10;
+    public bool _thrown;
+
+    [SerializeField] private float _maxForce = 100.0f;
+
     private Rigidbody _rb;
     private BoxCollider _collider;
     private Camera _camera;
 
     private float _force = 0;
     private bool _isTaken = false;
-
-    [Range(0, 100)]
-    public float forceIntensity = 10;
-
-    public bool _thrown;
 
     private void Start()
     {
@@ -51,6 +52,7 @@ public class Pickable : MonoBehaviour
 
         Vector3 lCameraDirection = _camera.transform.forward;
 
+        _force = Mathf.Clamp(_force, 0.0f, _maxForce);
         _rb.AddForce(lCameraDirection * _force, ForceMode.Acceleration);
 
         _isTaken = false;

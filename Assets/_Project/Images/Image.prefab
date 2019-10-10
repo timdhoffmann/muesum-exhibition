@@ -385,3 +385,4 @@ MonoBehaviour:
   destination: {fileID: 0}
   forceIntensity: 100
   _thrown: 0
+  _maxForce: 5000
