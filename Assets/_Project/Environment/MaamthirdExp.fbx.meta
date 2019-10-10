@@ -1,0 +1,250 @@
+fileFormatVersion: 2
+guid: 4ce5c2b88eda8df4fb5f08db7bc8807b
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Bench_01
+    100002: Bench_02
+    100004: Entrance_Column
+    100006: Entrance_Elevator_01
+    100008: Entrance_Elevator_02
+    100010: Entrance_midFloor
+    100012: Entrance_Roof_01
+    100014: Entrance_Roof_02
+    100016: Entrance_Stairs
+    100018: Entrance_Walls_02
+    100020: Entrance_Walls_03
+    100022: Entrance_Walls_04
+    100024: Entrance_Walls_05
+    100026: Floor 1
+    100028: Hall_Walls
+    100030: //RootNode
+    100032: Room01_railings_01
+    100034: Room01_railings_02
+    100036: Room01_railings_03
+    100038: Room01_railings_04
+    100040: Room01_Stairs_01
+    100042: Room01_Walls_01
+    100044: Room01_Walls_02
+    100046: Room01_Walls_03
+    100048: Room02_Walls_01
+    100050: Room02_Walls_02
+    100052: Room03_Walls_01
+    100054: Room03_Walls_02
+    100056: Room04_Walls_01
+    100058: Room04_Walls_02
+    100060: Room05_Walls_01
+    100062: Room05_Walls_02
+    400000: Bench_01
+    400002: Bench_02
+    400004: Entrance_Column
+    400006: Entrance_Elevator_01
+    400008: Entrance_Elevator_02
+    400010: Entrance_midFloor
+    400012: Entrance_Roof_01
+    400014: Entrance_Roof_02
+    400016: Entrance_Stairs
+    400018: Entrance_Walls_02
+    400020: Entrance_Walls_03
+    400022: Entrance_Walls_04
+    400024: Entrance_Walls_05
+    400026: Floor 1
+    400028: Hall_Walls
+    400030: //RootNode
+    400032: Room01_railings_01
+    400034: Room01_railings_02
+    400036: Room01_railings_03
+    400038: Room01_railings_04
+    400040: Room01_Stairs_01
+    400042: Room01_Walls_01
+    400044: Room01_Walls_02
+    400046: Room01_Walls_03
+    400048: Room02_Walls_01
+    400050: Room02_Walls_02
+    400052: Room03_Walls_01
+    400054: Room03_Walls_02
+    400056: Room04_Walls_01
+    400058: Room04_Walls_02
+    400060: Room05_Walls_01
+    400062: Room05_Walls_02
+    2100000: 'Material #3'
+    2100002: No Name
+    2300000: Bench_01
+    2300002: Bench_02
+    2300004: Entrance_Column
+    2300006: Entrance_Elevator_01
+    2300008: Entrance_Elevator_02
+    2300010: Entrance_midFloor
+    2300012: Entrance_Roof_01
+    2300014: Entrance_Roof_02
+    2300016: Entrance_Stairs
+    2300018: Entrance_Walls_02
+    2300020: Entrance_Walls_03
+    2300022: Entrance_Walls_04
+    2300024: Entrance_Walls_05
+    2300026: Floor 1
+    2300028: Hall_Walls
+    2300030: Room01_railings_01
+    2300032: Room01_railings_02
+    2300034: Room01_railings_03
+    2300036: Room01_railings_04
+    2300038: Room01_Stairs_01
+    2300040: Room01_Walls_01
+    2300042: Room01_Walls_02
+    2300044: Room01_Walls_03
+    2300046: Room02_Walls_01
+    2300048: Room02_Walls_02
+    2300050: Room03_Walls_01
+    2300052: Room03_Walls_02
+    2300054: Room04_Walls_01
+    2300056: Room04_Walls_02
+    2300058: Room05_Walls_01
+    2300060: Room05_Walls_02
+    3300000: Bench_01
+    3300002: Bench_02
+    3300004: Entrance_Column
+    3300006: Entrance_Elevator_01
+    3300008: Entrance_Elevator_02
+    3300010: Entrance_midFloor
+    3300012: Entrance_Roof_01
+    3300014: Entrance_Roof_02
+    3300016: Entrance_Stairs
+    3300018: Entrance_Walls_02
+    3300020: Entrance_Walls_03
+    3300022: Entrance_Walls_04
+    3300024: Entrance_Walls_05
+    3300026: Floor 1
+    3300028: Hall_Walls
+    3300030: Room01_railings_01
+    3300032: Room01_railings_02
+    3300034: Room01_railings_03
+    3300036: Room01_railings_04
+    3300038: Room01_Stairs_01
+    3300040: Room01_Walls_01
+    3300042: Room01_Walls_02
+    3300044: Room01_Walls_03
+    3300046: Room02_Walls_01
+    3300048: Room02_Walls_02
+    3300050: Room03_Walls_01
+    3300052: Room03_Walls_02
+    3300054: Room04_Walls_01
+    3300056: Room04_Walls_02
+    3300058: Room05_Walls_01
+    3300060: Room05_Walls_02
+    4300000: Bench_02
+    4300002: Bench_01
+    4300004: Room04_Walls_01
+    4300006: Room03_Walls_02
+    4300008: Room03_Walls_01
+    4300010: Room04_Walls_02
+    4300012: Room05_Walls_02
+    4300014: Hall_Walls
+    4300016: Room02_Walls_01
+    4300018: Room02_Walls_02
+    4300020: Room01_Walls_03
+    4300022: Room01_Walls_01
+    4300024: Room05_Walls_01
+    4300026: Room01_Stairs_01
+    4300028: Room01_railings_01
+    4300030: Room01_railings_02
+    4300032: Room01_railings_04
+    4300034: Room01_railings_03
+    4300036: Entrance_Walls_05
+    4300038: Entrance_Walls_02
+    4300040: Entrance_Stairs
+    4300042: Entrance_Roof_01
+    4300044: Entrance_Column
+    4300046: Entrance_Walls_03
+    4300048: Entrance_Roof_02
+    4300050: Room01_Walls_02
+    4300052: Entrance_Elevator_02
+    4300054: Entrance_Elevator_01
+    4300056: Floor
+    4300058: Entrance_midFloor
+    4300060: Entrance_Walls_04
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

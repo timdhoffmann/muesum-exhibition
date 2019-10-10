@@ -58,3 +58,7 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+ProjectSettings/Packages/com.unity.probuilder/Settings.json
+Assets/__NoVersionControl.meta
+Assets/__NoVersionControl
+ProjectSettings/Packages/com.unity.probuilder/Settings.json
