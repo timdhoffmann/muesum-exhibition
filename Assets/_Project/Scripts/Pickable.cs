@@ -73,7 +73,11 @@ public class Pickable : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonUp(0) && _isTaken) SetModeRelease();
+        if ((Input.GetMouseButtonUp(0) || Input.GetMouseButtonUp(1)) && _isTaken)
+        {
+            SetModeRelease();
+            return;
+        }
         if (Input.GetMouseButton(1)) AddForce();
     }
 
