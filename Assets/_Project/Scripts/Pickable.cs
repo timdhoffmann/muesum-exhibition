@@ -5,13 +5,6 @@ using UnityEngine;
 public class Pickable : MonoBehaviour
 {
     public Transform destination;
-    Rigidbody _rb;
-    BoxCollider _collider;
-    Camera _camera;
-
-    float _force = 0;
-    bool _isTaken = false;
-
     [Range(0, 100)]
     public float forceIntensity = 10;
 
@@ -23,9 +16,21 @@ public class Pickable : MonoBehaviour
 
     public bool _thrown;
 
+    [SerializeField] private float _maxForce = 100.0f;
+
+    private Rigidbody _rb;
+    private BoxCollider _collider;
+    private Camera _camera;
+
+    private float _force = 0;
+    private bool _isTaken = false;
+
     private void Start()
     {
         _rb = GetComponent<Rigidbody>();
+        _rb.useGravity = false;
+        _rb.isKinematic = true;
+
         _collider = GetComponent<BoxCollider>();
 
         standart = GetComponent<Renderer>().material;
@@ -35,7 +40,7 @@ public class Pickable : MonoBehaviour
         if (_camera == null) Debug.LogError("NO CAMERA FOUND");
     }
 
-    void SetModeTake()
+    private void SetModeTake()
     {
         _collider.enabled = false;
         _rb.useGravity = false;
@@ -56,6 +61,7 @@ public class Pickable : MonoBehaviour
 
         Vector3 lCameraDirection = _camera.transform.forward;
 
+        _force = Mathf.Clamp(_force, 0.0f, _maxForce);
         _rb.AddForce(lCameraDirection * _force, ForceMode.Acceleration);
 
         _isTaken = false;
@@ -84,7 +90,11 @@ public class Pickable : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonUp(0)) SetModeRelease();
+        if ((Input.GetMouseButtonUp(0) || Input.GetMouseButtonUp(1)) && _isTaken)
+        {
+            SetModeRelease();
+            return;
+        }
         if (Input.GetMouseButton(1)) AddForce();
         if (selected)
         {
@@ -96,7 +106,7 @@ public class Pickable : MonoBehaviour
         }
     }
 
-    void AddForce()
+    private void AddForce()
     {
         if (!_isTaken) return;
 
@@ -106,7 +116,7 @@ public class Pickable : MonoBehaviour
         //print(_force);
     }
 
-    void ResetForce()
+    private void ResetForce()
     {
         _force = 0;
     }
