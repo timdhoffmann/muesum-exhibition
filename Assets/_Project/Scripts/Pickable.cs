@@ -56,7 +56,7 @@ public class Pickable : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (_thrown)
+        if (_thrown && !collision.gameObject.tag.Equals("Room"))
         {
             _rb.useGravity = false;
             _rb.isKinematic = true;
