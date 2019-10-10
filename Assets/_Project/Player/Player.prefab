@@ -109,7 +109,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &2167494665441231269
 MonoBehaviour:
@@ -124,8 +124,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  jumpVelocity: 4
   lockCursor: 0
   isJumping: 0
+  fallMultiplier: 2.5
+  lowJumpMultiplier: 2
 --- !u!1 &2167494666670223537
 GameObject:
   m_ObjectHideFlags: 0
