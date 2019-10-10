@@ -7,6 +7,13 @@ public class Pickable : MonoBehaviour
     public Transform destination;
     [Range(0, 100)]
     public float forceIntensity = 10;
+
+    [Header("Materials")]
+    public Material outline;
+    public Material standart;
+
+    public bool selected;
+
     public bool _thrown;
 
     [SerializeField] private float _maxForce = 100.0f;
@@ -25,6 +32,8 @@ public class Pickable : MonoBehaviour
         _rb.isKinematic = true;
 
         _collider = GetComponent<BoxCollider>();
+
+        standart = GetComponent<Renderer>().material;
 
         //System D method, can be improved
         _camera = FindObjectOfType<Camera>();
@@ -71,6 +80,12 @@ public class Pickable : MonoBehaviour
     private void OnMouseOver()
     {
         if (Input.GetMouseButtonDown(0)) SetModeTake();
+        selected = true;
+    }
+
+    private void OnMouseExit()
+    {
+        selected = false;
     }
 
     private void Update()
@@ -81,6 +96,14 @@ public class Pickable : MonoBehaviour
             return;
         }
         if (Input.GetMouseButton(1)) AddForce();
+        if (selected)
+        {
+            GetComponent<Renderer>().material = outline;
+            GetComponent<Renderer>().material.mainTexture = standart.mainTexture;
+        } else
+        {
+            GetComponent<Renderer>().material = standart;
+        }
     }
 
     private void AddForce()
