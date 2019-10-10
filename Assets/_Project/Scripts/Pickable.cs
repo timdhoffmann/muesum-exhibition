@@ -20,6 +20,9 @@ public class Pickable : MonoBehaviour
     private void Start()
     {
         _rb = GetComponent<Rigidbody>();
+        _rb.useGravity = false;
+        _rb.isKinematic = true;
+
         _collider = GetComponent<BoxCollider>();
 
         //System D method, can be improved
