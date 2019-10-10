@@ -9,11 +9,27 @@ public class Pushable : MonoBehaviour
 
     private bool fall;
     float fallAngle = 0;
+    bool selected;
+
+    [Header("Materials")]
+    public Material outline;
+    public Material standart;
 
     private void OnMouseDown()
     {
         fall = true;
     }
+
+    private void OnMouseOver()
+    { 
+        selected = true;
+    }
+
+    private void OnMouseExit()
+    {
+        selected = false;
+    }
+
 
     public void Update()
     {
@@ -27,7 +43,18 @@ public class Pushable : MonoBehaviour
             fallAngle = Mathf.Lerp(fallAngle, Mathf.PI*0.25f, Time.deltaTime);
             transform.RotateAround(pivot.position, Vector3.right, fallAngle);
         }
+
+        if (selected)
+        {
+            GetComponent<Renderer>().material = outline;
+        }
+        else
+        {
+            GetComponent<Renderer>().material = standart;
+        }
     }
+
+
 
 }
 

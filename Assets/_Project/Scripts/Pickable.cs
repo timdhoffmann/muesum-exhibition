@@ -15,6 +15,12 @@ public class Pickable : MonoBehaviour
     [Range(0, 100)]
     public float forceIntensity = 10;
 
+    [Header("Materials")]
+    public Material outline;
+    public Material standart;
+
+    public bool selected;
+
     public bool _thrown;
 
     private void Start()
@@ -66,12 +72,25 @@ public class Pickable : MonoBehaviour
     private void OnMouseOver()
     {
         if (Input.GetMouseButtonDown(0)) SetModeTake();
+        selected = true;
+    }
+
+    private void OnMouseExit()
+    {
+        selected = false;
     }
 
     private void Update()
     {
         if (Input.GetMouseButtonUp(0)) SetModeRelease();
         if (Input.GetMouseButton(1)) AddForce();
+        if (selected)
+        {
+            GetComponent<Renderer>().material = outline;
+        } else
+        {
+            GetComponent<Renderer>().material = standart;
+        }
     }
 
     void AddForce()

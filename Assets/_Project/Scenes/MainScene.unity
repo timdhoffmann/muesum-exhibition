@@ -1821,6 +1821,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 1452762324}
   forceIntensity: 10
+  outline: {fileID: 2100000, guid: 311b769aff6f652429842f8aed166a4e, type: 2}
+  standart: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  selected: 0
   _thrown: 0
 --- !u!54 &383756089
 Rigidbody:
@@ -1868,7 +1871,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 250aa6e18ab9c544aa2ed4b85be5009a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1945,6 +1948,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 1452762324}
   forceIntensity: 10
+  outline: {fileID: 2100000, guid: 311b769aff6f652429842f8aed166a4e, type: 2}
+  standart: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  selected: 0
   _thrown: 0
 --- !u!54 &387675363
 Rigidbody:
@@ -1992,7 +1998,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 250aa6e18ab9c544aa2ed4b85be5009a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2538,6 +2544,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pivot: {fileID: 1426659203}
+  outline: {fileID: 2100000, guid: 311b769aff6f652429842f8aed166a4e, type: 2}
+  standart: {fileID: 2100000, guid: 250aa6e18ab9c544aa2ed4b85be5009a, type: 2}
 --- !u!54 &709443437
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3784,7 +3792,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 250aa6e18ab9c544aa2ed4b85be5009a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3840,6 +3848,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 1452762324}
   forceIntensity: 10
+  outline: {fileID: 2100000, guid: 311b769aff6f652429842f8aed166a4e, type: 2}
+  standart: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  selected: 0
   _thrown: 0
 --- !u!54 &1215919852
 Rigidbody:
@@ -3892,6 +3903,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 1452762324}
   forceIntensity: 10
+  outline: {fileID: 2100000, guid: 311b769aff6f652429842f8aed166a4e, type: 2}
+  standart: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  selected: 0
   _thrown: 0
 --- !u!54 &1353908646
 Rigidbody:
@@ -3939,7 +3953,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 250aa6e18ab9c544aa2ed4b85be5009a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
