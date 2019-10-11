@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -14,26 +15,27 @@ public class Player : MonoBehaviour
     public float fallMultiplier = 2.5f;
     public float lowJumpMultiplier = 2f;
 
-    Rigidbody rigidBody;
+    private Rigidbody rigidBody;
 
-    void Start()
+    private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         rigidBody = GetComponent<Rigidbody>();
     }
 
-    bool IsGrounded()
+    private bool IsGrounded()
     {
         return Physics.Raycast(transform.position, -Vector3.up, 1f);
     }
 
-    void Update()
+    private void Update()
     {
         Move();
         DisplayCursor();
     }
 
-    void Move()
+    private void Move()
     {
         float translation = Input.GetAxis("Vertical") * speed;
         float straffe = Input.GetAxis("Horizontal") * speed;
@@ -50,6 +52,13 @@ public class Player : MonoBehaviour
             GetComponent<Rigidbody>().velocity = Vector3.up * jumpVelocity;
         }
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            SceneManager.LoadScene("Menu");
+        }
+
         if (rigidBody.velocity.y < 0)
         {
             rigidBody.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
@@ -60,7 +69,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    void DisplayCursor()
+    private void DisplayCursor()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
